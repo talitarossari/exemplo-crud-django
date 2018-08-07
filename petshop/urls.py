@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from petshop.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Incluindo as urls do cliente.urls e colocando no cliente/.
     path('cliente/', include('cliente.urls', namespace='cliente')),
+    path('', index, name='index')
 ]

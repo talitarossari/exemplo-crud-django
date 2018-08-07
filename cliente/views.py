@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from cliente.models import Cliente
-from django.views.generic.edit import UpdateView, CreateView
+from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from django.views import generic
 
 
@@ -27,4 +27,11 @@ class ClienteCreateView(CreateView):
     model = Cliente
     template_name = 'cliente_criar.html'
     fields = '__all__'
+    success_url = reverse_lazy('cliente:listar')
+
+
+class ClienteDeleteView(DeleteView):
+    model = Cliente
+    context_object_name = 'cliente'
+    template_name = 'cliente_confirmacao_deletar.html'
     success_url = reverse_lazy('cliente:listar')

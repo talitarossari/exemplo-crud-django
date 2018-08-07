@@ -29,7 +29,7 @@
             </td>
             <td>
               <a href="{% url 'cliente:editar' pk=cliente.id %}">Editar</a>
-              <a href="#">Excluir</a>
+              <a href="{% url 'cliente:deletar' pk=cliente.id %}">Excluir</a>
             </td>
           </tr>
         {% endfor %}
