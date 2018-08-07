@@ -1,18 +1,32 @@
-<table>
-  <thead>
-    <td>Nome</td>
-    <td>E-mail</td>
-  </thead>
-  <tbody>
-    {% for cliente in clientes %}
-      <tr>
-        <td>
-          {{ cliente.nome }}
-        </td>
-        <td>
-          {{ cliente.email }}
-        </td>
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
+{% extends 'base.html' %}
+
+{% block title %} Clientes - Lista{% endblock %}
+
+{% block content %}
+
+  <h1>Lista de Clientes: </h1>
+
+  <table class="table">
+    <thead>
+      <td>Nome</td>
+      <td>E-mail</td>
+      <td>Ações</td>
+    </thead>
+    <tbody>
+      {% for cliente in clientes %}
+        <tr>
+          <td>
+            {{ cliente.nome }}
+          </td>
+          <td>
+            {{ cliente.email }}
+          </td>
+          <td>
+            <a href="#">Editar</a>
+            <a href="#">Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
