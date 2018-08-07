@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <td>Nome</td>
+    <td>E-mail</td>
+  </thead>
+  <tbody>
+    {% for cliente in clientes %}
+      <tr>
+        <td>
+          {{ cliente.nome }}
+        </td>
+        <td>
+          {{ cliente.email }}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
